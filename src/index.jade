@@ -1,0 +1,142 @@
+mixin slide(names, slideClasses)
+  if names
+    section(class=names + ' ' + slideClasses, data-bespoke-backdrop='backdrop ' + names.split(' ').map(function (name) {
+      return 'backdrop--' + name;
+    }).join(' '))
+      block
+  else
+    section
+      block
+
+doctype html
+html
+  head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+  title kintone devCamp Vol.1
+
+  link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+    article
+      +slide('orion')
+        h3 kintone devCamp Vol.2
+        img(src='images/dev-camp-logo.png', width='30%')
+
+      +slide('orion')
+        h1 自己紹介
+      +slide
+        h2 名前
+        h3 落合 雄一
+      +slide
+        h2 所属
+        h3 サイボウズスタートアップス株式会社
+      +slide
+        h2 役職
+        h3 取締役 最高技術責任者
+        h3 kintoneエバンジェリスト
+
+      +slide('orion')
+        h2 kintoneカスタマイズ
+        h3 弊社での取り組みを紹介します
+      +slide
+        h2
+          a(href='https://cstap.cybozu.com/k/393/show#record=509', target='_blank') 契約管理アプリ
+      +slide('orion')
+        h2 利用している外部サービス
+        h3 プリントクリエイター
+        h3 kBackup
+        h3 メールワイズ
+      +slide
+        pre.language-javascript
+          code.
+            var _pcreatorConfig;
+            _pcreatorConfig = _pcreatorConfig || {};
+            _pcreatorConfig = {
+              appCode: "a00723f5223ac9e120c275169ca96812d479f49f",
+              baseUrl: "//print.kintoneapp.com"
+            };
+            (function() {
+              "use strict"
+              kintone.events.on('app.record.detail.show', function (event) {
+                var l, s, scr, styl;
+                _pcreatorConfig.event = event;
+                styl = document.createElement("link");
+                styl.rel = "stylesheet";
+                styl.type = "text/css";
+                styl.href = "//print.kintoneapp.com/build/kintone-lib.css";
+                l = document.getElementsByTagName("link")[0];
+                l.parentNode.insertBefore(styl, l);
+                scr = document.createElement("script");
+                scr.type = "text/javascript";
+                scr.async = true;
+                scr.src = "//print.kintoneapp.com/build/kintone-lib.js";
+                s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(scr, s);
+                return event;
+              });
+              kintone.events.on('app.record.index.show', function (event) {
+                var l, s, scr, styl;
+                _pcreatorConfig.event = event;
+                styl = document.createElement("link");
+                styl.rel = "stylesheet";
+                styl.type = "text/css";
+                styl.href = "//print.kintoneapp.com/build/kintone-lib.css";
+                l = document.getElementsByTagName("link")[0];
+                l.parentNode.insertBefore(styl, l);
+                scr = document.createElement("script");
+                scr.type = "text/javascript";
+                scr.async = true;
+                scr.src = "//print.kintoneapp.com/build/kintone-lib.js";
+                s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(scr, s);
+                return event;
+              });
+            })();
+      +slide
+        pre.language-javascript
+          code.
+            var _kbackupConfig;
+            _kbackupConfig = _kbackupConfig || {};
+            _kbackupConfig = {
+              appCode: "4602a65faf1c3a40f1487f86f453b9b8a19814f1",
+              baseUrl: "//backup.kintoneapp.com"
+            };
+            (function() {
+              "use strict"
+              kintone.events.on('app.record.detail.show', function(event){
+                _kbackupConfig.event = event;
+              });
+              kintone.events.on('app.record.index.show', function(event){
+                _kbackupConfig.event = event;
+              });
+
+              var s, scr;
+              scr = document.createElement("script");
+              scr.type = "text/javascript";
+              scr.async = true;
+              scr.src = "//backup.kintoneapp.com/dist/kintone-lib/build.js";
+              s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(scr, s);
+            })();
+
+      +slide('orion')
+        h3 皆さんもkintoneで契約管理やってみませんか？
+
+      +slide('orion')
+        h2 宣伝になっちゃいますが・・・
+
+      +slide
+        h3 帳票作成までできる！kintone活用セミナー
+        h3 5/29(金)16:00〜17:30
+        h3 サイボウズスタートアップス主催のセミナー第一弾！
+      +slide
+        h3 kintoneの少し高度な使い方から、プリントクリエイターを使った綺麗な帳票の作成まで行ないます！
+        h3 「プリントクリエイター」と検索して、HPよりお申込みページヘお進みください。
+        h3
+          a(href='https://pc.kintoneapp.com/', target='_blank') HP
+
+      +slide('orion')
+          h3 ご清聴ありがとうございました！！
+
+    script(src='build/build.js')

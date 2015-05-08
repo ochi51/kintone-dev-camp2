@@ -1,0 +1,85 @@
+@import 'prism/themes/prism-okaidia.css'
+
+pre.small
+  font-size: .7em
+  padding: 0
+
+sup
+  font-size: 0.3em
+  position: relative
+  top: -1.5em
+
+h1 a
+  border: none
+
+h1.name
+  font-size: 1.3em
+  margin: 0
+
+.avatar
+  filter: grayscale(30%)
+  width: 120px
+  height: @width
+  border-radius: 100%
+  margin: .5em 0
+
+.bespoke-slide
+  z-index: 1
+
+pre
+  padding: 2em !important
+
+pre, code
+  font-size: 14px
+  margin: 0 !important
+
+.backdrop
+  &--orion
+    background-image: url('../images/orion.jpg')
+    background-position: 0 0
+    &.bespoke-backdrop-active
+      opacity: 0.4
+    &.bespoke-backdrop-before
+      transition-delay: 2s
+  &--lightning
+    background-image: url('../images/lightning.gif')
+    &.bespoke-backdrop-active
+      opacity: 0.75
+  &--poisonapple
+    background-image: url('../images/poisonapple.gif')
+    background-position: 50% 80%
+    &.bespoke-backdrop-active
+      opacity: 0.25
+  &--yellow
+    background: #D2D22E
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--still
+    transition: opacity 1s ease
+    transform: none
+  &--bw
+    filter: grayscale(100%)
+
+.yellow
+  color: black
+  h1
+    border-color: currentColor
+
+.bullet.expand
+  transition: all 2s ease
+  opacity: 0
+  overflow-x: hidden
+  overflow-y: visible
+  max-width: 0
+  display: inline-block
+  white-space: nowrap
+  text-align: center
+  line-height: 1.1em
+  position: relative
+  top: .2em
+  &.bespoke-bullet-active
+    opacity: 1
+    max-width: 500px
+
+.left
+  float: left;
