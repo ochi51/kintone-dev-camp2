@@ -1,4 +1,4 @@
-# Search Bundles
+# kintone devCamp Vol.2 LT
 
 ## View slides locally
 
